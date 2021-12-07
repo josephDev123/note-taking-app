@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Navbar() {
     return (
-        <div className='col-3 me-2 border border-1 border-secondary p-2'>
+        <div className='col-3 m-2 border border-1 border-secondary p-2'>
             <div className='form-group'>
                 <button className='btn btn-primary btn-sm me-2'>+</button>
                 <span className='text-white'>New Note</span>
