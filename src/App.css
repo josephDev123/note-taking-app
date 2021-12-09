@@ -1,0 +1,14 @@
+/*navbar component */
+.nav-item:hover{
+    background-color: gray;
+    color:white;
+}
+
+.nav-item:hover a{
+    color:white;
+}
+
+.nav-item a{
+    color:white;
+    text-decoration: none;
+}
