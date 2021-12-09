@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function NoteList() {
     return (
-        <div className='col-3 me-2'>
+        <div className='col-3 m-2 border border-1 border-secondary p-2'>
             <div className="card">
                 <div class="card-body">
                     <h5 className="card-title">Special title treatment</h5>
