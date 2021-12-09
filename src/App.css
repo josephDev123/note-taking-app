@@ -12,3 +12,10 @@
     color:white;
     text-decoration: none;
 }
+
+/* general styling */
+ *{
+    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Libre Franklin', sans-serif;
+    font-family: 'Roboto Slab', serif;
+}

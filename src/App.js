@@ -5,10 +5,14 @@ import Markdown from './components/Markdown';
 import Header from './components/Header';
 function App() {
   return (
-    <div className="container-fluid bg-dark d-flex pt-2 flex-wrap">
+    <div>
+      <Header/>
+   
+    <div className="container-fluid bg-dark d-flex pt-2 flex-wrap justify-content-center ">
           <Navbar/>
           <NoteList/>
           <Markdown/>
+    </div>
     </div>
   );
 }

@@ -11,13 +11,13 @@ export default function Navbar() {
           
                 <ul className="nav flex-column">
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="#">Active</a>
+                        <a className="nav-link active" aria-current="page" href="#">Notes</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Link</a>
+                        <a className="nav-link" href="#">Favourites</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Link</a>
+                        <a className="nav-link" href="#">Trash</a>
                     </li>
                 </ul>
             
