@@ -2,9 +2,12 @@ import React from 'react';
 import {useState, useContext} from 'react';
 import MDEditor from '@uiw/react-md-editor';
 import { MarkdownContext } from '../context/Markdown_context';
+import { add_note } from '../redux/NoteSlice';
+import { useDispatch } from 'react-redux';
 
 
 export default function Markdown() {
+    const dispatch = useDispatch();
     const {value, setValue} = useContext(MarkdownContext);
 
     return (

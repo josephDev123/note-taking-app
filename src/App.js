@@ -11,15 +11,15 @@ function App() {
   const [value, setValue] = useState("**Hello world programmers!!!**");
   return (
     <div>
-      <Header/>
-      <div className="container-fluid bg-dark d-flex pt-2 flex-wrap justify-content-center ">
-        <MarkdownContext.Provider value={{ setValue,  value}}>
-            <Navbar/>
-            <NoteList/>
-            <Markdown/>
-        </MarkdownContext.Provider>
-            
-      </div>
+        <Header/>
+        <div className="container-fluid bg-dark d-flex pt-2 flex-wrap justify-content-center ">
+          <MarkdownContext.Provider value={{ setValue,  value}}>
+              <Navbar/>
+              <NoteList/>
+              <Markdown/>
+          </MarkdownContext.Provider>
+              
+        </div>
     </div>
   );
 }
