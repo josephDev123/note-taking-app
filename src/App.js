@@ -1,18 +1,25 @@
 import './App.css';
+import {useContext, useState} from 'react';
 import Navbar from './components/Navbar';
 import NoteList from './components/NoteList';
 import Markdown from './components/Markdown';
 import Header from './components/Header';
+import {MarkdownContext} from './context/Markdown_context';
+
+
 function App() {
+  const [value, setValue] = useState("**Hello world programmers!!!**");
   return (
     <div>
       <Header/>
-   
-    <div className="container-fluid bg-dark d-flex pt-2 flex-wrap justify-content-center ">
-          <Navbar/>
-          <NoteList/>
-          <Markdown/>
-    </div>
+      <div className="container-fluid bg-dark d-flex pt-2 flex-wrap justify-content-center ">
+        <MarkdownContext.Provider value={{ setValue,  value}}>
+            <Navbar/>
+            <NoteList/>
+            <Markdown/>
+        </MarkdownContext.Provider>
+            
+      </div>
     </div>
   );
 }
