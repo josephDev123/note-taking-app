@@ -8,6 +8,10 @@
     color:white;
 }
 
+.nav-item:hover{
+    cursor:pointer;
+}
+
 .nav-item a{
     color:white;
     text-decoration: none;

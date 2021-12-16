@@ -1,6 +1,17 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
+import { useContext } from 'react';
+import { MarkdownContext } from '../context/Markdown_context';
+
 
 export default function Navbar() {
+     let {notes, setNotes} = useContext(MarkdownContext);
+    const Notes = useSelector(state => state.note);
+    function handleNoteClick(){
+        setNotes(Notes.filter((item) => item.trash ===false));
+    }
+
+    console.log(notes);
     return (
         <div className='col-3 m-2 border border-1 border-secondary p-2'>
             <div className='form-group'>
@@ -11,13 +22,13 @@ export default function Navbar() {
           
                 <ul className="nav flex-column">
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="#">Notes</a>
+                        <a className="nav-link active" aria-current="page" onClick={handleNoteClick}>Notes</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Favourites</a>
+                        <a className="nav-link">Favourites</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Trash</a>
+                        <a className="nav-link">Trash</a>
                     </li>
                 </ul>
             
