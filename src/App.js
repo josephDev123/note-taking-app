@@ -8,7 +8,7 @@ import {MarkdownContext} from './context/Markdown_context';
 
 
 function App() {
-  const [value, setValue] = useState("**Hello world programmers!!!**");
+  const [value, setValue] = useState();
   return (
     <div>
         <Header/>
