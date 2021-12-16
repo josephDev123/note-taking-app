@@ -1,16 +1,30 @@
-import React from 'react'
+import React, { Fragment } from 'react';
+import { useContext } from 'react';
+import { MarkdownContext } from '../context/Markdown_context';
 
 export default function NoteList() {
-    return (
-        <div className='col-3 m-2 border border-1 border-secondary p-2'>
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Special title treatment</h5>
-                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                </div>
-            </div>
-        </div>
+   let {notes} = useContext(MarkdownContext);
+   console.log(notes);
+
+        let noteList = notes.map((item ,i) => 
+        // col-3 m-2 border border-1 border-secondary p-2
+                        <Fragment key={item.id}>
+                            <div className="card m-2 border border-1 border-secondary p-2">
+                                <div className="card-body">
+                                    <h5 className="card-title">Notes {i}</h5>
+                                    <p className="card-text">{item.note}.</p>
+                                </div>
+                            </div>
+                        </Fragment>
+                
+          )
+
+
+     return (
+         <div>
+            {noteList}
+         </div>
+             
             
-       
-    )
+     )
 }

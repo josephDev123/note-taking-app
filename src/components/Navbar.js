@@ -5,13 +5,12 @@ import { MarkdownContext } from '../context/Markdown_context';
 
 
 export default function Navbar() {
-     let {notes, setNotes} = useContext(MarkdownContext);
+     let {setNotes} = useContext(MarkdownContext);
     const Notes = useSelector(state => state.note);
     function handleNoteClick(){
         setNotes(Notes.filter((item) => item.trash ===false));
     }
 
-    console.log(notes);
     return (
         <div className='col-3 m-2 border border-1 border-secondary p-2'>
             <div className='form-group'>

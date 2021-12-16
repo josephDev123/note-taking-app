@@ -9,7 +9,7 @@ import {MarkdownContext} from './context/Markdown_context';
 
 function App() {
   const [value, setValue] = useState();
-  const [notes, setNotes] = useState();
+  const [notes, setNotes] = useState([]);
 
   return (
     <div>
