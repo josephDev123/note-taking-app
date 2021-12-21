@@ -23,3 +23,11 @@
     font-family: 'Libre Franklin', sans-serif;
     font-family: 'Roboto Slab', serif;
 }
+
+
+.icon{
+    cursor: pointer;
+}
+ .fas{
+    color: #FFCC00;
+}
