@@ -11,7 +11,7 @@ export default function NoteList() {
                     <Fragment key={item.id}>
                         <div className="card m-2 border border-1 border-secondary p-2">
                             <div className="card-body">
-                                <h5 className="card-title">Notes {item.id.substr(0, 8)}</h5>
+                                <h5 className="card-title">Note: {item.id.substr(0, 8)}</h5>
                                 <p className="card-text">{item.note.substr(0, 25).concat('....')}.</p>
                             </div>
                         </div>

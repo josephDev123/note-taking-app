@@ -1,15 +1,27 @@
 import './App.css';
-import {useContext, useState} from 'react';
+import {useContext, useState, useEffect} from 'react';
 import Navbar from './components/Navbar';
 import NoteList from './components/NoteList';
 import Markdown from './components/Markdown';
 import Header from './components/Header';
 import {MarkdownContext} from './context/Markdown_context';
+import {useSelector} from 'react-redux';
+
 
 
 function App() {
   const [value, setValue] = useState();
   const [notes, setNotes] = useState([]);
+  const storeState =useSelector(state => state.note);
+  // const {setNotes} = useContext(MarkdownContext);
+  useEffect(() => {
+    setNotes(storeState.filter(item =>item.status !== 'trash'));
+    return () => {
+      setNotes('');
+    }
+  }, [])
+  
+
 
   return (
     <div>
