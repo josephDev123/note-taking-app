@@ -31,17 +31,17 @@ export default function Navbar() {
                 <span className='text-white'>New Note</span>
             </div>
            
-                <ul className="nav flex-column">
-                    <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" onClick={handleNoteClick}>Notes</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" onClick={handleFavouriteClick}>Favourites</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" onClick={handleTrashClick}>Trash</a>
-                    </li>
-                </ul>
+            <ul className="nav flex-column">
+                <li className="nav-item">
+                    <a className="nav-link active" aria-current="page" onClick={handleNoteClick}>Notes</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" onClick={handleFavouriteClick}>Favourites</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" onClick={handleTrashClick}>Trash</a>
+                </li>
+            </ul>
             
         </div>
        

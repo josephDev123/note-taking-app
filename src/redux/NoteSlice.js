@@ -13,9 +13,14 @@ export const NoteSlice = createSlice({
         toggle_favorite:(state, action)=>{
             const{id} = action.payload;
             return state.map(item =>item.id===id?{...item, favorite:!item.favorite}:item)
+        },
+        
+        trash_toggle: (state, action)=>{
+            const{id}= action.payload;
+            return state.map(item=> item.id===id? {...item, trash:!item.trash}:item);
         }
     }
 })
 
-export const {add_note, toggle_favorite}= NoteSlice.actions;
+export const {add_note, toggle_favorite, trash_toggle}= NoteSlice.actions;
 export default NoteSlice.reducer;
