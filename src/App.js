@@ -14,13 +14,13 @@ function App() {
   const [notes, setNotes] = useState([]);
   
   const storeState =useSelector(state => state.note);
-console.log(notes);
+console.log(storeState);
   useEffect(() => {
-    setNotes(storeState.filter(item =>item.trash ===false ));
+    setNotes(storeState.filter(item =>item.trash !==true ));
     return () => {
       setNotes('');
     }
-  }, [])
+  }, [storeState])
   
 
 

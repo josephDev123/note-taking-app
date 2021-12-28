@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { MarkdownContext } from '../context/Markdown_context';
 import { useDispatch } from 'react-redux';
 import {toggle_favorite, trash_toggle, delete_note} from '../redux/NoteSlice';
