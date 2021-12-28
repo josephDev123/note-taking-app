@@ -12,15 +12,15 @@ import {useSelector} from 'react-redux';
 function App() {
   const [value, setValue] = useState();
   const [notes, setNotes] = useState([]);
+  
   const storeState =useSelector(state => state.note);
-
-
+console.log(notes);
   useEffect(() => {
-    setNotes(storeState.filter(item =>item.status !== 'trash'));
+    setNotes(storeState.filter(item =>item.trash ===false ));
     return () => {
       setNotes('');
     }
-  })
+  }, [])
   
 
 

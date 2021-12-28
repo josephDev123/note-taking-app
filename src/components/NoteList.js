@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { useContext } from 'react';
 import { MarkdownContext } from '../context/Markdown_context';
 import { useDispatch } from 'react-redux';
-import {toggle_favorite, trash_toggle} from '../redux/NoteSlice';
+import {toggle_favorite, trash_toggle, delete_note} from '../redux/NoteSlice';
 
 export default function NoteList() {
     let dispatch = useDispatch();
@@ -20,7 +20,7 @@ export default function NoteList() {
 
                                     <span className='me-3 icon'><i className="fas fa-trash fa-xs" onClick={()=>dispatch(trash_toggle({id:item.id}))}></i></span>
 
-                                    <span style={{ fontSize:'7px' }} className='text-danger fs-6 me-2 fw-bold icon'>x</span>
+                                    <span style={{ fontSize:'7px' }} className='text-danger fs-6 me-2 fw-bold icon' onClick={()=>dispatch(delete_note({id:item.id}))}>x</span>
                                 </div>
                             </div>
                         </Fragment> 
