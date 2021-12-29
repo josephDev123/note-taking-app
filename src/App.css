@@ -31,3 +31,9 @@
  /* .fas{
     color: #FFCC00;
 } */
+
+
+/* Notelist component */
+.card:hover{
+ cursor: pointer;
+}
