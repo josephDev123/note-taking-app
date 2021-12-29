@@ -6,10 +6,11 @@ import {toggle_favorite, trash_toggle, delete_note} from '../redux/NoteSlice';
 
 export default function NoteList() {
     let dispatch = useDispatch();
-   let {notes,setValue} = useContext(MarkdownContext);
+   let {notes,setValue, setRead} = useContext(MarkdownContext);
 
  function handlePassDataToMarkDown(note){
     setValue(note);
+    setRead(true)
  }
 
      let noteList = notes.map(item => 

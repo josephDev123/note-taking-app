@@ -33,7 +33,16 @@ export default function Markdown() {
 
             <MDEditor.Markdown source={value} />
             </div>
-           {!read?<button type='submit' className='btn btn-primary mt-2' onClick ={handleSubmitClick}>Submit Note</button>: <button type='button' className='btn btn-primary mt-2' onClick ={handleSubmitClick}>Read Note</button>} 
+           {!read?<button type='submit' className='btn btn-primary mt-2' onClick ={handleSubmitClick}>Submit Note</button>: (
+          
+            <div>
+                <button type='button' className='btn btn-primary mt-2'>Read Note</button>
+                <br/>
+                {/* <span className='alert alert-warning fs-6'></span> */}
+                <div id="emailHelp" class="form-text text-warning">Note: click on <span className='text-primary'>New note</span> button on the top to add new note.</div>
+            </div>
+
+           )} 
            
         </div>
     )

@@ -5,7 +5,7 @@ import { MarkdownContext } from '../context/Markdown_context';
 
 
 export default function Navbar() {
-     let {setNotes} = useContext(MarkdownContext);
+     let {setNotes, setValue, setRead} = useContext(MarkdownContext);
     const Notes = useSelector(state => state.note);
     
     // function that fire when the NOTE button is clicked
@@ -23,11 +23,16 @@ export default function Navbar() {
         setNotes(Notes.filter((item) => item.trash ===true));
     }
 
+    function handleClickNewNote(){
+        setRead(false);
+        setValue(' ');
+    }
+
     return (
         <div className='col-3 m-2 border border-1 border-secondary p-2'>
 
             <div className='form-group'>
-                <button className='btn btn-primary btn-sm me-2'>+</button>
+                <button className='btn btn-primary btn-sm me-2' onClick={handleClickNewNote}>+</button>
                 <span className='text-white'>New Note</span>
             </div>
            
