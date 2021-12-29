@@ -12,6 +12,7 @@ import {useSelector} from 'react-redux';
 function App() {
   const [value, setValue] = useState();
   const [notes, setNotes] = useState([]);
+  const [read, setRead] = useState(false);
   
   const storeState =useSelector(state => state.note);
   useEffect(() => {
@@ -27,7 +28,7 @@ function App() {
     <div>
         <Header/>
         <div className="container-fluid bg-dark d-flex pt-2 flex-wrap justify-content-center ">
-          <MarkdownContext.Provider value={{ setValue,  value, notes, setNotes}}>
+          <MarkdownContext.Provider value={{ setValue,  value, notes, setNotes, setRead, read}}>
               <Navbar/>
               <NoteList/>
               <Markdown/>

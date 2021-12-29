@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default function Markdown() {
     const dispatch = useDispatch();
-    const {value, setValue} = useContext(MarkdownContext);
+    const {value, setValue, read} = useContext(MarkdownContext);
 
     // handle the submission of note
     function handleSubmitClick(){
@@ -33,7 +33,8 @@ export default function Markdown() {
 
             <MDEditor.Markdown source={value} />
             </div>
-            <button type='submit' className='btn btn-primary mt-2' onClick ={handleSubmitClick}>Submit Note</button>
+           {!read?<button type='submit' className='btn btn-primary mt-2' onClick ={handleSubmitClick}>Submit Note</button>: <button type='button' className='btn btn-primary mt-2' onClick ={handleSubmitClick}>Read Note</button>} 
+           
         </div>
     )
 }
