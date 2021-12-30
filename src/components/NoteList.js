@@ -14,13 +14,19 @@ export default function NoteList() {
  }
 
      let noteList = notes.map(item => 
-                        <Fragment key={item.id}>
-                            <div className="card m-2 border border-1 border-secondary p-2 position-relative" onClick={()=>handlePassDataToMarkDown(item.note)}>
+                        <Fragment key={item.id}> 
+                            <div className="card shadow-sm m-2 border border-1 border-secondary p-2 position-relative" onClick={()=>handlePassDataToMarkDown(item.note)}>
                                 <div className="card-body">
                                     <h5 className="card-title">Note: {item.id.substr(0, 8)}</h5>
                                     <p className="card-text">{item.note.substr(0, 25).concat('....')}.</p>
                                 </div>
+
                                 <div className='position-absolute d-flex justify-content-between top-0 end-0'>
+                                <span className='me-3 icon'><i className="fas fa-edit fa-xs" onClick={(e)=>{
+                                        // dispatch();
+                                        e.stopPropagation();
+                                    }}></i></span>
+
 
                                     <span className='me-3 icon'><i style={item.favorite?{color:"yellow" }:{}} className="far fa-star fa-xs" onClick={(e)=>{
                                         dispatch(toggle_favorite({id:item.id}))

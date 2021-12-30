@@ -29,11 +29,11 @@ export default function Navbar() {
     }
 
     return (
-        <div className='col-3 m-2 border border-1 border-secondary p-2'>
+        <div className='col-3 m-2 border border-1  p-2 bg-white shadow-sm'>
 
-            <div className='form-group'>
+            <div className='form-group' >
                 <button className='btn btn-primary btn-sm me-2' onClick={handleClickNewNote}>+</button>
-                <span className='text-white'>New Note</span>
+                <span className='text-dark'>New Note</span><hr/>
             </div>
            
             <ul className="nav flex-column">
