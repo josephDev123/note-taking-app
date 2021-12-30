@@ -1,9 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {getDataFromLocalStorage} from '../save_and_load_data/SaveAndLoadData';
 
 
 export const NoteSlice = createSlice({
     name:'note',
-    initialState:[],
+    initialState:getDataFromLocalStorage(),
     reducers:{
         
         add_note:(state, action)=>{
