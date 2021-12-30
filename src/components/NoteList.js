@@ -22,11 +22,20 @@ export default function NoteList() {
                                 </div>
                                 <div className='position-absolute d-flex justify-content-between top-0 end-0'>
 
-                                    <span className='me-3 icon'><i style={item.favorite?{color:"yellow" }:{}} className="far fa-star fa-xs" onClick={()=>dispatch(toggle_favorite({id:item.id}))}></i></span>
+                                    <span className='me-3 icon'><i style={item.favorite?{color:"yellow" }:{}} className="far fa-star fa-xs" onClick={(e)=>{
+                                        dispatch(toggle_favorite({id:item.id}))
+                                        e.stopPropagation();
+                                    }}></i></span>
 
-                                    <span className='me-3 icon'><i style={item.trash?{color:"red" }:{}}className="fas fa-trash fa-xs" onClick={()=>dispatch(trash_toggle({id:item.id}))}></i></span>
+                                    <span className='me-3 icon'><i style={item.trash?{color:"red" }:{}}className="fas fa-trash fa-xs" onClick={(e)=>{
+                                        dispatch(trash_toggle({id:item.id}))
+                                        e.stopPropagation();
+                                    }}></i></span>
 
-                                    <span style={{ fontSize:'7px' }} className='text-danger fs-6 me-2 fw-bold icon' onClick={()=>dispatch(delete_note({id:item.id}))}>x</span>
+                                    <span style={{ fontSize:'7px' }} className='text-danger fs-6 me-2 fw-bold icon' onClick={(e)=>{
+                                        dispatch(delete_note({id:item.id})) 
+                                        e.stopPropagation()
+                                     }}>x</span>
                                 </div>
                             </div>
                         </Fragment> 

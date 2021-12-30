@@ -12,6 +12,10 @@
     cursor:pointer;
 }
 
+.nav-item:focus-within{
+    background-color:red;
+}
+
 .nav-item a{
     color:white;
     text-decoration: none;

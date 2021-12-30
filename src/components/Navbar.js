@@ -25,7 +25,7 @@ export default function Navbar() {
 
     function handleClickNewNote(){
         setRead(false);
-        setValue(' ');
+        setValue('hello world');
     }
 
     return (

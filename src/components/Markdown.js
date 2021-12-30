@@ -39,7 +39,7 @@ export default function Markdown() {
                 <button type='button' className='btn btn-primary mt-2'>Read Note</button>
                 <br/>
                 {/* <span className='alert alert-warning fs-6'></span> */}
-                <div id="emailHelp" class="form-text text-warning">Note: click on <span className='text-primary'>New note</span> button on the top to add new note.</div>
+                <div id="emailHelp" className="form-text text-warning">Note: click on <span className='text-primary'>New note</span> button on the top to add new note.</div>
             </div>
 
            )} 
