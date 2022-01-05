@@ -29,7 +29,8 @@ export default function Markdown() {
 
     function handleEditClick(){
         dispatch(edit_note({id:edit.id, edited_note:value}));
-        // setEdit({bol:false});
+        setEdit({bol:false});
+        setValue('')
         console.log(edit.id, value);
     }
 
