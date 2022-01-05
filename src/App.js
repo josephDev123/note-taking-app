@@ -13,6 +13,7 @@ function App() {
   const [value, setValue] = useState();
   const [notes, setNotes] = useState([]);
   const [read, setRead] = useState(false);
+  const [edit, setEdit] = useState({id:'', bol: false});
   
   const storeState =useSelector(state => state.note);
   useEffect(() => {
@@ -28,7 +29,7 @@ function App() {
     <div>
         <Header/>
         <div className="container-fluid bg-dark d-flex pt-2 flex-wrap justify-content-center ">
-          <MarkdownContext.Provider value={{ setValue,  value, notes, setNotes, setRead, read}}>
+          <MarkdownContext.Provider value={{ setValue,  value, notes, setNotes, setRead, read, setEdit, edit}}>
               <Navbar/>
               <NoteList/>
               <Markdown/>

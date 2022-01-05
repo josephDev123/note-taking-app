@@ -24,9 +24,14 @@ export const NoteSlice = createSlice({
         delete_note:(state, action)=>{
             const{id}= action.payload;
              return state.filter(item=> item.id !== id);
+        },
+
+        edit_note:(state, action)=>{
+            const {id,edited_note } = action.payload;
+            return state.map(item=>item.id===id?{...item, note:edited_note}:item)
         }
     }
 })
 
-export const {add_note, toggle_favorite, trash_toggle, delete_note}= NoteSlice.actions;
+export const {add_note, toggle_favorite, trash_toggle, delete_note, edit_note}= NoteSlice.actions;
 export default NoteSlice.reducer;

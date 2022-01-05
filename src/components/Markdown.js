@@ -2,14 +2,14 @@ import React from 'react';
 import {useState, useContext} from 'react';
 import MDEditor from '@uiw/react-md-editor';
 import { MarkdownContext } from '../context/Markdown_context';
-import { add_note } from '../redux/NoteSlice';
+import { add_note, edit_note } from '../redux/NoteSlice';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 
 
 export default function Markdown() {
     const dispatch = useDispatch();
-    const {value, setValue, read} = useContext(MarkdownContext);
+    const {value, setValue, read, edit, setEdit} = useContext(MarkdownContext);
 
     // handle the submission of note
     function handleSubmitClick(){
@@ -26,6 +26,13 @@ export default function Markdown() {
         }
     }
 
+
+    function handleEditClick(){
+        dispatch(edit_note({id:edit.id, edited_note:value}));
+        // setEdit({bol:false});
+        console.log(edit.id, value);
+    }
+
     return (
         <div className='col-5 m-2 border border-1 border-secondary p-2'>
             <div className='text-dark bg-white'>
@@ -33,7 +40,7 @@ export default function Markdown() {
 
             <MDEditor.Markdown source={value} />
             </div>
-           {!read?<button type='submit' className='btn btn-primary mt-2' onClick ={handleSubmitClick}>Submit Note</button>: (
+           {!read?<button type='submit' className='btn btn-primary mt-2 me-2' onClick ={handleSubmitClick}>Submit Note</button>: (
           
             <div>
                 <button type='button' className='btn btn-primary mt-2'>Read Note</button>
@@ -44,6 +51,7 @@ export default function Markdown() {
 
            )} 
            
+           {edit.bol?<button type='submit' className='btn btn-primary mt-2' onClick ={handleEditClick}>Edit Note</button>:''};
         </div>
     )
 }

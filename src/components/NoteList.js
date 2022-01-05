@@ -6,11 +6,18 @@ import {toggle_favorite, trash_toggle, delete_note} from '../redux/NoteSlice';
 
 export default function NoteList() {
     let dispatch = useDispatch();
-   let {notes,setValue, setRead} = useContext(MarkdownContext);
+   let {notes,setValue, setRead, setEdit} = useContext(MarkdownContext);
 
  function handlePassDataToMarkDown(note){
     setValue(note);
     setRead(true)
+    setEdit({bol:false})
+ }
+
+ function handleEditClickBtn(note, note_id){
+    setValue(note);
+    setEdit({id:note_id,bol:true})
+    setRead(false)
  }
 
      let noteList = notes.map(item => 
@@ -23,6 +30,7 @@ export default function NoteList() {
 
                                 <div className='position-absolute d-flex justify-content-between top-0 end-0'>
                                 <span className='me-3 icon'><i className="fas fa-edit fa-xs" onClick={(e)=>{
+                                    handleEditClickBtn(item.note, item.id)
                                         // dispatch();
                                         e.stopPropagation();
                                     }}></i></span>
