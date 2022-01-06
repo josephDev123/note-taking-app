@@ -31,9 +31,7 @@ function App() {
           <MarkdownContext.Provider value={{ setValue,  value, notes, setNotes, setRead, read, setEdit, edit}}>
               <div className="container-fluid bg-dark d-flex pt-2 flex-wrap justify-content-center ">
                   <Navbar/>
-                  <hr/>
                   <NoteList/>
-                  <hr/>
                   <Markdown/>
               </div>   
           </MarkdownContext.Provider>     
