@@ -47,7 +47,7 @@ export default function Navbar() {
                     <a className="nav-link" onClick={handleTrashClick}>Trash</a>
                 </li>
             </ul>
-            
+            <hr/>
         </div>
        
     )

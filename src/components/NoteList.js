@@ -51,7 +51,9 @@ export default function NoteList() {
                                         e.stopPropagation()
                                      }}>x</span>
                                 </div>
+                                <hr/>
                             </div>
+                            <hr/>
                         </Fragment> 
                         )
 
