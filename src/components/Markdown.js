@@ -36,7 +36,7 @@ export default function Markdown() {
 
     return (
         <div className='m-2 flex-grow-1 border border-1 border-secondary p-2'>
-            <div className='text-dark bg-white'>
+            <div className='text-dark bg-white p-2'>
             <MDEditor value={value} onChange={setValue} />
 
             <MDEditor.Markdown source={value} />
