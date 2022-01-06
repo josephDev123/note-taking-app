@@ -35,7 +35,7 @@ export default function Markdown() {
     }
 
     return (
-        <div className='col-5 m-2 border border-1 border-secondary p-2'>
+        <div className='m-2 flex-grow-1 border border-1 border-secondary p-2'>
             <div className='text-dark bg-white'>
             <MDEditor value={value} onChange={setValue} />
 

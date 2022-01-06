@@ -29,9 +29,9 @@ export default function Navbar() {
     }
 
     return (
-        <div className='col-3 m-2 border border-1  p-2 bg-white shadow-sm'>
+        <div className='m-2 flex-grow-1 border border-1 bg-white shadow-sm' id='navbar'>
 
-            <div className='form-group' >
+            <div className='form-group p-2' >
                 <button className='btn btn-primary btn-sm me-2' onClick={handleClickNewNote}>+</button>
                 <span className='text-dark'>New Note</span><hr/>
             </div>

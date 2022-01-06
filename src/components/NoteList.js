@@ -22,7 +22,7 @@ export default function NoteList() {
 
      let noteList = notes.map(item => 
                         <Fragment key={item.id}> 
-                            <div className="card shadow-sm m-2 border border-1 border-secondary p-2 position-relative" onClick={()=>handlePassDataToMarkDown(item.note)}>
+                            <div className="card flex-grow-1 shadow-sm m-2 border border-1 border-secondary p-2 position-relative" onClick={()=>handlePassDataToMarkDown(item.note)}>
                                 <div className="card-body">
                                     <h5 className="card-title">Note: {item.id.substr(0, 8)}</h5>
                                     <p className="card-text">{item.note.substr(0, 25).concat('....')}.</p>

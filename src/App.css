@@ -41,3 +41,12 @@
 .card:hover{
  cursor: pointer;
 }
+
+
+
+
+@media screen and (width:768px){
+    #navbar{
+        max-width:250px !important
+    }
+}

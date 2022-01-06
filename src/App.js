@@ -28,14 +28,13 @@ function App() {
   return (
     <div>
         <Header/>
-        <div className="container-fluid bg-dark d-flex pt-2 flex-wrap justify-content-center ">
           <MarkdownContext.Provider value={{ setValue,  value, notes, setNotes, setRead, read, setEdit, edit}}>
-              <Navbar/>
-              <NoteList/>
-              <Markdown/>
-          </MarkdownContext.Provider>
-              
-        </div>
+              <div className="container-fluid bg-dark d-flex pt-2 flex-wrap justify-content-center ">
+                  <Navbar/>
+                  <NoteList/>
+                  <Markdown/>
+              </div>   
+          </MarkdownContext.Provider>     
     </div>
   );
 }
