@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+// import App from './App';
 import {Provider} from 'react-redux';
 import {NoteStore} from './redux/NoteStore';
+import MainApp from './MainApp';
 
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={NoteStore}>
-      <App />
+      <MainApp />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
