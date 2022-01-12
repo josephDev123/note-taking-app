@@ -1,25 +1,45 @@
 import React from 'react'
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useRef } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+import {signInWithEmailAndPassword, getAuth} from 'firebase/auth';
 
 export function Login() {
+    const redirect = useNavigate();
+    const db= getAuth();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    console.log(email,password);
+    const email_dom = useRef();
+    const password_dom = useRef();
+    const error_message_dom = useRef();
+    
+    function handleLoginSubmit(e){
+        e.preventDefault();
+        email_dom.current.value='';
+        password_dom.current.value='';
+        signInWithEmailAndPassword(db, email, password).then((userSnapShot)=>{
+            return userSnapShot? redirect('/home'):''
+        }).catch(e=>{
+            error_message_dom.current.textContent= e.code
+        })
+        
+    }
+
+
     return (
         <div className='container'>
              <div className='d-flex flex-column justify-conntent-center align-items-center'>
                 <h3>Login</h3>
                 <img src='login_img/login_img1.png' alt='' width='150px' heigth='150px'/>
-                <form>
+                <form onSubmit={handleLoginSubmit}>
+                <div className='text-center' ref={error_message_dom}></div>
                     <div className="mb-3">
                         <label for="exampleInputEmail1" className="form-label">Email address</label>
-                        <input type="email" className="form-control" id="exampleInputEmail1" onChange={(e)=>setEmail(e.target.value)} aria-describedby="emailHelp"/>
+                        <input type="email" className="form-control" id="exampleInputEmail1" ref={email_dom} onChange={(e)=>setEmail(e.target.value)} aria-describedby="emailHelp"/>
                         <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" className="form-label">Password</label>
-                        <input type="password" className="form-control" onChange={(e)=>setPassword(e.target.value)} id="exampleInputPassword1"/>
+                        <input type="password" className="form-control" ref={password_dom} onChange={(e)=>setPassword(e.target.value)} id="exampleInputPassword1"/>
                     </div>
                     <div class="input-group mb-3">
                         <button type="submit" className="btn btn-primary">Login</button>
