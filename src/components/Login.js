@@ -8,7 +8,6 @@ export function Login() {
     const redirect = useNavigate();
     // extract 'user' auth from authentification context
     let {signIn, user} = useContext(AuthContext);
-    console.log(user);
     const db= getAuth();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -22,8 +21,9 @@ export function Login() {
         password_dom.current.value='';
         signInWithEmailAndPassword(db, email, password).then((userSnapShot)=>{
             if(userSnapShot){
-                return redirect('/home')
                 signIn(userSnapShot.user)
+                return redirect('/home')
+               
             }
            return '';
         }).catch(e=>{

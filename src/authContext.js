@@ -1,4 +1,4 @@
-import {createContext, useState} from 'react';
+import {createContext, useState, useEffect} from 'react';
 import app from './firebase/firebase';
 import {onAuthStateChanged, getAuth} from 'firebase/auth';
 
@@ -9,25 +9,29 @@ export function AuthProvider({children}){
     const [user, setUser] = useState();
 
     // firebase auth observer
-    onAuthStateChanged(auth, (user)=>{
-        if(user){
-            setUser(user)
-        }else{
-            setUser(null);
-        }
-    })
+    useEffect(()=>{
+        onAuthStateChanged(auth, (user)=>{
+            if(user){
+                setUser(user)
+            }else{
+                setUser(null);
+            }
+        })
+
+
+
+    }, []);
+   
 
     const signIn = (loginUser)=>{
-        setUser(loginUser)
-
+        setUser(loginUser);
     }
 
     const signOut = ()=>{
-        setUser(null)
+        setUser(null);
     }
 
-    // let value = [];
-
+console.log(user);
     return(
         <AuthContext.Provider value={{user, signIn, signOut }}>
             {children}

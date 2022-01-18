@@ -7,8 +7,6 @@ export default function Auth_route({children}) {
     // extract context data from the authentifiction context
     let {user} = useContext(AuthContext);
     let url = useLocation();
-    console.log(user);
-
     if(user){
         return children    
     }

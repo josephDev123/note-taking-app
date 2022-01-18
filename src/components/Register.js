@@ -17,7 +17,6 @@ export function Register() {
     function handleSubmitRegister(e){
         e.preventDefault();
         createUserWithEmailAndPassword(db, email,password).then(userSnaphot=>{
-            console.log(userSnaphot.user)
             email_dom.current.value=''
             password_dom.current.value=''
             redirect('/');
