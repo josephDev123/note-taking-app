@@ -1,10 +1,14 @@
 import React from 'react'
-import { useState, useRef } from 'react'
+import { useState, useRef, useContext} from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import {signInWithEmailAndPassword, getAuth} from 'firebase/auth';
+import {AuthContext} from '../authContext';
 
 export function Login() {
     const redirect = useNavigate();
+    // extract 'user' auth from authentification context
+    let {signIn, user} = useContext(AuthContext);
+    console.log(user);
     const db= getAuth();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -17,7 +21,11 @@ export function Login() {
         email_dom.current.value='';
         password_dom.current.value='';
         signInWithEmailAndPassword(db, email, password).then((userSnapShot)=>{
-            return userSnapShot? redirect('/home'):''
+            if(userSnapShot){
+                return redirect('/home')
+                signIn(userSnapShot.user)
+            }
+           return '';
         }).catch(e=>{
             error_message_dom.current.textContent= e.code
         })
