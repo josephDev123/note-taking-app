@@ -12,7 +12,7 @@ import {AuthContext} from '../authContext';
 
 export default function Navbar() {
     let redirect = useNavigate();
-    let {signOut} = useContext(AuthContext);
+    let {sign_out} = useContext(AuthContext);
     let auth  = getAuth();
      let {setNotes, setValue, setRead} = useContext(MarkdownContext);
     const Notes = useSelector(state => state.note);
@@ -39,8 +39,8 @@ export default function Navbar() {
 
     function handleLogout(){
         signOut(auth).then(()=>{
-            signOut(null);
-            return redirect('/');
+            return ()=>sign_out(null);
+            // return redirect('/');
         }).catch((e)=>{
             alert(e.code);
         })

@@ -27,13 +27,13 @@ export function AuthProvider({children}){
         setUser(loginUser);
     }
 
-    const signOut = ()=>{
+    const sign_out = ()=>{
         setUser(null);
     }
 
 console.log(user);
     return(
-        <AuthContext.Provider value={{user, signIn, signOut }}>
+        <AuthContext.Provider value={{user, signIn, sign_out }}>
             {children}
         </AuthContext.Provider>
     )
