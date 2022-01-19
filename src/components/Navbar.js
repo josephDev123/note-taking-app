@@ -1,7 +1,7 @@
 import React from 'react'
 import app from '../firebase/firebase';
 import { useSelector } from 'react-redux';
-import { useContext, useContext } from 'react';
+import { useContext } from 'react';
 import { MarkdownContext } from '../context/Markdown_context';
 import { useNavigate } from 'react-router-dom';
 import { signOut, getAuth } from 'firebase/auth';
