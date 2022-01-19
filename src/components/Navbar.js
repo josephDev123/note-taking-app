@@ -1,10 +1,19 @@
 import React from 'react'
+import app from '../firebase/firebase';
 import { useSelector } from 'react-redux';
-import { useContext } from 'react';
+import { useContext, useContext } from 'react';
 import { MarkdownContext } from '../context/Markdown_context';
+import { useNavigate } from 'react-router-dom';
+import { signOut, getAuth } from 'firebase/auth';
+import {AuthContext} from '../authContext';
+
+
 
 
 export default function Navbar() {
+    let redirect = useNavigate();
+    let {signOut} = useContext(AuthContext);
+    let auth  = getAuth();
      let {setNotes, setValue, setRead} = useContext(MarkdownContext);
     const Notes = useSelector(state => state.note);
     
@@ -28,6 +37,15 @@ export default function Navbar() {
         setValue('hello world');
     }
 
+    function handleLogout(){
+        signOut(auth).then(()=>{
+            signOut(null);
+            return redirect('/');
+        }).catch((e)=>{
+            alert(e.code);
+        })
+    }
+
     return (
         <div className='m-2 flex-grow-1 border border-1 bg-white shadow-sm' id='navbar'>
 
@@ -45,6 +63,9 @@ export default function Navbar() {
                 </li>
                 <li className="nav-item">
                     <a className="nav-link" onClick={handleTrashClick}>Trash</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" onClick={handleLogout}>Logout</a>
                 </li>
             </ul>
             <hr/>
