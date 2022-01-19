@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Header() {
     return (
-        <div className='d-flex justify-content-center align-items-center'>
+        <div className='d-flex justify-content-center align-items-center bg-warning'>
             <h2>Note taking app <i className="fas fa-edit text-primary"></i></h2>
         </div>
     )
