@@ -27,7 +27,8 @@ export function Login() {
             }
            return '';
         }).catch(e=>{
-            error_message_dom.current.textContent= e.code
+            error_message_dom.current.textContent= e.code;
+            error_message_dom.current.style.color='red'
         })
         
     }

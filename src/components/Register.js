@@ -21,7 +21,8 @@ export function Register() {
             password_dom.current.value=''
             redirect('/');
         }).catch(e=>{
-            error_message_dom.current.textContent= e.code
+            error_message_dom.current.textContent= e.code;
+            error_message_dom.current.style.color='red';
         })
     }
 
