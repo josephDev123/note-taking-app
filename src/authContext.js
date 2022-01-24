@@ -21,7 +21,7 @@ export function AuthProvider({children}){
             }
         })
 
-    }, [])
+    }, []);
 
     const signIn = (loginUser)=>{
         setUser(loginUser);

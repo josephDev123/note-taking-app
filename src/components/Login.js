@@ -21,7 +21,7 @@ export function Login() {
         password_dom.current.value='';
         const auth = getAuth();
 
-setPersistence(auth, browserLocalPersistence )
+// setPersistence(auth, browserLocalPersistence )
 
         signInWithEmailAndPassword(auth, email, password).then((userSnapShot)=>{
             if(userSnapShot){
