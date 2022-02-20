@@ -7,7 +7,7 @@ It is an app that allows you create NOTES with ease and it gives tou the freedom
 ## Preview
 
 ### sample 1:
-<img src={process.env.PUBLIC_URL + "/preview_img/Screenshot_1.png"} alt='note_take image' />
+<img src='preview_img/Screenshot_1.png' alt='note_take image' />
 <!-- {process.env.PUBLIC_URL + '/yourPathHere.jpg'} -->
 ### sample 2:
 <img src='preview_img/Screenshot_2.png' alt='note_take image'>
